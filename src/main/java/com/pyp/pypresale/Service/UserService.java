@@ -1,16 +1,18 @@
 package com.pyp.pypresale.Service;
 
-import com.pyp.pypresale.Entity.Result;
+import com.pyp.pypresale.Utils.Result;
 import com.pyp.pypresale.Entity.User;
 
 public interface UserService {
-    //普通用户功能
-    Result userRegister(User user);//用户注册
-    Result userLogin();//用户登录
 
-    //管理员功能
-    Result findAllOfUsers();//查找所有用户
-    Result findOneOfUser();//查找单个用户
+    //修改用户自己的基本信息
+    Result alterUserInformation(String username,String sex,String telephone);
+
+    //用户注销登录
+    Result logout();
+
+    //
+
 
 
 

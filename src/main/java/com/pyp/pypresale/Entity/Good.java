@@ -1,6 +1,5 @@
 package com.pyp.pypresale.Entity;
 
-
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -10,43 +9,41 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * 用户实体类
+ * 商品实体类
  */
 
 @EntityListeners(AuditingEntityListener.class)//自动更新时间需要
 @Data
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "good")
+public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "GoodID")
+    private Integer goodID;
+
+
     @Column(name = "UserID")
     private Integer userID;
 
-    //@NotEmpty(message = "学号不能为空!")
-    @Column(name = "StudentID",unique = true)
-    private String studentID;
+    @Column(name = "Title")
+    private String title;
 
-   // @NotEmpty(message = "用户名不能为空!")
-    @Column(name = "Username",unique = true)
-    private String username;
+    @Column(name = "Type")
+    private String type;
 
-    //@NotEmpty(message = "密码不能为空!")
-    @Column(name = "Password")
-    private String password;
+    @Column(name = "Text")
+    private String text;
 
-    @Column(name = "Role")
-    private String role;
+    @Column(name = "Saleing")
+    private Integer saleing;
 
-    @Column(name = "Sex")
-    private String sex;
+    @Column(name = "Price")
+    private float price;
 
-    @Column(name = "Telephone",unique = true)
-    private String telephone;
-
-    @Column(name = "Photo")
-    private String photo;
+    @Column(name = "ImageUrl")
+    private String imageUrl;
 
     @CreatedDate
     @Column(name = "create_time")
@@ -56,8 +53,7 @@ public class User {
     @Column(name = "updata_time")
     private Date updataTime;
 
-
-    public User() {
+    public Good() {
     }
 
 }

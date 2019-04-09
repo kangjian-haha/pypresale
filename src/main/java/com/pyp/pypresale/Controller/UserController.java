@@ -1,78 +1,38 @@
 package com.pyp.pypresale.Controller;
 
-import com.pyp.pypresale.Entity.Result;
-import com.pyp.pypresale.Entity.User;
-import com.pyp.pypresale.Repository.UserRepository;
-
 import com.pyp.pypresale.Service.ServiceImp.UserServiceImp;
+import com.pyp.pypresale.Utils.Result;
 import com.pyp.pypresale.Utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/user")
 public class UserController {
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private UserServiceImp userServiceImp;
 
-
-    /**
-     * 功能:注册新一个用户
-     * 地址:127.0.0.1:8080/userRegister
-     * 参数:User user;
-     *
-     * 角色:user
-     */
-    @PostMapping("/userRegister")
-    public Result userRegister(@Valid User user, BindingResult bindingResult){
-        // 则写入数据库失败,并返回错误信息.并把message给到BindingResult里面
-        if (bindingResult.hasErrors()){
-            return ResultUtils.error(505,bindingResult.getFieldError().getDefaultMessage());
-        }else
-        return userServiceImp.userRegister(user);
+    //测试-当前登录的是谁
+    @GetMapping(value = "/test")
+    public String test(){
+        return userServiceImp.test();
     }
 
 
-    //**************************************以下未做!!!!!!!******************************************************
-    /**
-     * 用户登陆
-     * 127.0.0.1:8080/login
-     */
-    @PostMapping("/login")
-    public String loginUser(
-                            @RequestParam("StudentID") String studentID,
-                            @RequestParam("Password") String password
-    ){
-        if (!userRepository.existsById(studentID)){
-            return "用户不存在!";
-        }
-        else {
-            if (password.equals(userRepository.findById(studentID).get().getPassword()))
-                return "登陆成功!";
-            else
-                return "密码错误!";
-        }
+    //用户注销登录
+    @GetMapping(value = "/logout")
+    public Result logout(){
+        return userServiceImp.logout();
     }
 
-    /**
-     * 查询所有用户
-     * 127.0.0.1:8080/findAll
-     * @return
-     */
-    @GetMapping("/findAll")
-    public List<User> findAll(){
-        return userRepository.findAll();
+
+    //修改用户自己的基本信息
+    @PostMapping(value = "/alterUserInformation")
+    public Result alterUserInformation(String username,String sex,String telephone){
+        return userServiceImp.alterUserInformation(username,sex,telephone);
     }
+
 
 
 
