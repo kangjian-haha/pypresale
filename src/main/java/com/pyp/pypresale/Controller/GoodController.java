@@ -47,5 +47,11 @@ public class GoodController {
         return goodServiceImp.findSelfGoods();
     }
 
+    //修改商品信息
+    @PostMapping(value = "/alterGoodInformation")
+    public Result alterGoodInformation(String title,String text,float price,String type,Integer goodID){
+        return goodServiceImp.alterGoodInformation(title,text,price,type,goodID);
+    }
+
 
 }

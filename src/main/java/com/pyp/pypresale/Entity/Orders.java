@@ -21,13 +21,13 @@ public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "OrderID")
+    @Column(name = "orderid")
     private Integer orderID;
 
-    @Column(name = "UserID")
+    @Column(name = "userid")
     private Integer userID;
 
-    @Column(name = "GoodID")
+    @Column(name = "goodid")
     private Integer goodID;
 
     @CreatedDate

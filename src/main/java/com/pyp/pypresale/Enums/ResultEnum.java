@@ -25,9 +25,17 @@ public enum ResultEnum {
 
     RELEASE_GOOD_SUCCESS(200,"发布商品成功"),
 
+    UPDATE_GOOD_SUCCESS(200,"修改商品成功"),
+
     DELETE_GOOD_IS_SUCCESS(200,"删除商品成功"),
 
     FIND_SELFGOODS_IS_SUCCESS(200,"查看自己的商品成功"),
+
+    COLLECTION_GOOD_IS_SUCCESS(200,"收藏商品成功"),
+
+    NOT_COLLECTION_GOOD_IS_SUCCESS(200,"取消收藏商品成功"),
+
+    FIND_COLLECTION_GOOD_IS_SUCCESS(200,"查看当前用户的收藏商品,成功"),
 
 
     /**
@@ -52,6 +60,12 @@ public enum ResultEnum {
 
     RELEASE_GOOD_IS_FAIL_TITLE_IS_EMPTY(100,"发布失败! 商品标题不能为空"),
     RELEASE_GOOD_IS_FAIL_PRICE_IS_EMPTY(100,"发布失败! 商品价格不能为0"),
+
+    UPDATE_GOOD_IS_FAIL_TITLE_IS_EMPTY(100,"修改失败! 商品标题不能为空"),
+    UPDATE_GOOD_IS_FAIL_PRICE_IS_EMPTY(100,"修改失败! 商品价格不能为0"),
+
+    NOT_COLLECTION_GOOD_IS_FAIL(100,"取消收藏商品失败"),
+
 
 
     NOT_LOGIN(101,"未登录"),

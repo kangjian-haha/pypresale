@@ -129,8 +129,17 @@ public class GoodServiceImp implements GoodService {
     }
 
 
+    //修改商品信息
+    @Transactional
     @Override
-    public Result alterGoodInformation(Good good) {
-        return null;
+    public  Result alterGoodInformation(String title,String text,float price,String type,Integer goodID){
+        if (title.isEmpty()){
+            return ResultUtils.error(ResultEnum.UPDATE_GOOD_IS_FAIL_TITLE_IS_EMPTY);//修改失败! 商品标题不能为空
+        }else if (price==0){
+            return ResultUtils.error(ResultEnum.UPDATE_GOOD_IS_FAIL_PRICE_IS_EMPTY);//修改失败! 商品价格不能为0
+        }
+
+        goodRepository.alterGoodInformation(title,text,price,type,goodID);//修改商品信息
+        return ResultUtils.success(ResultEnum.UPDATE_GOOD_SUCCESS);//修改商品成功
     }
 }

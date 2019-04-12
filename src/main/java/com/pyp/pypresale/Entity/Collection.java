@@ -22,13 +22,13 @@ public class Collection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "CollectionID")
+    @Column(name = "collectionid")
     private Integer collectionID;
 
-    @Column(name = "UserID")
+    @Column(name = "userid")
     private Integer userID;
 
-    @Column(name = "GoodID")
+    @Column(name = "goodid")
     private Integer goodID;
 
     @CreatedDate

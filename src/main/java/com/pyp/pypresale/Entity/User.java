@@ -21,31 +21,31 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "UserID")
+    @Column(name = "userid")
     private Integer userID;
 
     //@NotEmpty(message = "学号不能为空!")
-    @Column(name = "StudentID",unique = true)
+    @Column(name = "studentid",unique = true)
     private String studentID;
 
    // @NotEmpty(message = "用户名不能为空!")
-    @Column(name = "Username",unique = true)
+    @Column(name = "username",unique = true)
     private String username;
 
     //@NotEmpty(message = "密码不能为空!")
-    @Column(name = "Password")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "Role")
+    @Column(name = "role")
     private String role;
 
-    @Column(name = "Sex")
+    @Column(name = "sex")
     private String sex;
 
-    @Column(name = "Telephone",unique = true)
+    @Column(name = "telephone",unique = true)
     private String telephone;
 
-    @Column(name = "Photo")
+    @Column(name = "photo")
     private String photo;
 
     @CreatedDate

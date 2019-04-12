@@ -9,11 +9,11 @@ import com.pyp.pypresale.Utils.Result;
 public interface CollectionService {
 
     //查看当前用户的收藏商品
-    Result findCollectionGoods(Integer userID);
+    Result findCollectionGoods();
 
     //收藏商品
-    Result collectionOfGood(Integer userID,Integer goodID);
+    Result collectionOfGood(Integer goodID);
 
     //取消收藏商品
-    Result cancelGoodOfCollection(Integer userID,Integer goodID);
+    Result cancelGoodOfCollection(Integer goodID);
 }

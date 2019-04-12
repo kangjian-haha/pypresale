@@ -20,29 +20,29 @@ public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "GoodID")
+    @Column(name = "goodid")
     private Integer goodID;
 
 
-    @Column(name = "UserID")
+    @Column(name = "userid")
     private Integer userID;
 
-    @Column(name = "Title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "Type")
+    @Column(name = "type")
     private String type;
 
-    @Column(name = "Text")
+    @Column(name = "text")
     private String text;
 
-    @Column(name = "Saleing")
+    @Column(name = "saleing")
     private Integer saleing;
 
-    @Column(name = "Price")
+    @Column(name = "price")
     private float price;
 
-    @Column(name = "ImageUrl")
+    @Column(name = "imageUrl")
     private String imageUrl;
 
     @CreatedDate

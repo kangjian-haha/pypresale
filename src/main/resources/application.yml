@@ -13,3 +13,16 @@ spring:
   jackson:
       date-format: yyyyMMdd HH:mm:ss
       time-zone: GMT+8
+
+  ## MULTIPART (MultipartProperties)
+  servlet:
+    multipart:
+      # 开启 multipart 上传功能
+      enabled: true
+      # 文件写入磁盘的阈值
+      file-size-threshold: 2KB
+      # 最大文件大小
+      max-file-size: 200MB
+      # 最大请求大小
+      max-request-size: 215MB
+

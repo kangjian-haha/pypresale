@@ -49,4 +49,14 @@ public interface GoodRepository extends JpaRepository<Good,Integer> {
 
     //查找自己发布的商品
     List<Good> findAllByUserID(Integer userID);
+
+    //根据商品ID查找商品
+    Good findByGoodID(Integer goodID);
+
+    //修改商品信息
+    @Modifying
+    @Query(value = "update Good g set g.title=?1,g.text=?2,g.price=?3,g.type=?4 where g.goodID=?5 ")
+    void alterGoodInformation(String title,String text,float price,String type,Integer goodID);
+
+    List<Good> findGoodsByGoodID(List<Integer> goodIDs);
 }

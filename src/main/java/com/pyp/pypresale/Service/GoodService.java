@@ -22,7 +22,7 @@ public interface GoodService {
     Result findSelfGoods();
 
     //修改商品信息
-    Result alterGoodInformation(Good good);
+    Result alterGoodInformation(String title,String text,float price,String type,Integer goodID);
 
 
 
